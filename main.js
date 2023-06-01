@@ -154,3 +154,53 @@ Promise.all(alldone).then(()=>{
      */
     console.log("Hello")
 })
+
+
+//Smooth Scroll 
+body,
+  html {
+    overscroll-behavior: none;
+    background-color: #000000;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  main {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .scrollable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    
+    will-change: transform;
+  }
+
+let scrollable = document.querySelector('.scrollable');
+
+let current = 0;
+let target = 0;
+let ease = 0.055;
+
+// Linear inetepolation used for smooth scrolling and image offset uniform adjustment
+function lerp(start, end, t){
+    return start * (1 - t ) + end * t;
+}
+
+// init function triggered on page load to set the body height to enable scrolling and EffectCanvas initialised
+function init(){
+    document.body.style.height = `${scrollable.getBoundingClientRect().height}px`;
+}
+
+// translate the scrollable div using the lerp function for the smooth scrolling effect.
+function smoothScroll(){
+    target = window.scrollY;
+    current = lerp(current, target, ease);
+    scrollable.style.transform = `translate3d(0,${-current}px, 0)`;
+}
+init()
+smoothScroll()
