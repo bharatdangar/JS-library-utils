@@ -120,3 +120,37 @@ const prepend = (parent, el) => {
 const toggleClass = (el, className) => { 
     el.classList.toggle(className);
 }
+
+
+
+//Font and images loader 
+import imagesLoaded from 'imagesloaded';
+import FontFaceObserver from 'fontfaceobserver';
+
+/**
+ * * load necessary things first
+ */
+const fontOpen= new Promise(resolve => {
+    new FontFaceObserver("Open Sans").load().then(()=>{
+        resolve()
+    })
+})
+
+const fontPlayFair = new Promise(resolve => {
+    new FontFaceObserver('Playfair Display').load().then(()=>{
+        resolve()
+    })
+})
+
+const preLoadedImgs = new Promise( resolve => {
+    imagesLoaded(document.querySelectorAll('img'), { background: true } , resolve)
+})
+
+let alldone = [fontOpen, fontPlayFair, preLoadedImgs]
+
+Promise.all(alldone).then(()=>{
+    /**
+     * * recall methods
+     */
+    console.log("Hello")
+})
