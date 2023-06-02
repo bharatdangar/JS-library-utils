@@ -172,8 +172,8 @@ let myInstance = new MyClass(); // create instance of exported class
 //=============================================
 
 
-// **Creating Objects**
-//There are two ways to create objects in JavaScript: using object literals and using the Object() constructor.
+// Creating Objects
+// There are two ways to create objects in JavaScript: using object literals and using the Object() constructor.
 
 // Using object literal
 let obj1 = {
@@ -190,8 +190,8 @@ obj2.key3 = true;
 
 
 
-//### **Accessing Object Properties**
-//Object properties can be accessed using dot notation or bracket notation.
+// Accessing Object Properties
+// Object properties can be accessed using dot notation or bracket notation.
 
 let obj = {
     key1: "value1",
@@ -201,3 +201,46 @@ let obj = {
 
 let value1 = obj.key1;     // using dot notation
 let value2 = obj["key2"];  // using bracket notation
+
+
+
+// Modifying Object Properties
+// Object properties can be modified using dot notation or bracket notation.
+
+let obj = {
+    key1: "value1",
+    key2: 2,
+    key3: true
+};
+
+obj.key1 = "new value";    // using dot notation
+obj["key2"] = 3;           // using bracket notation
+
+
+// Adding Object Properties
+// New properties can be added to an object using dot notation or bracket notation.
+
+let obj = {
+    key1: "value1",
+    key2: 2,
+    key3: true
+};
+
+obj.key4 = "new value";    // using dot notation
+obj["key5"] = 3;           // using bracket notation
+
+
+
+// Looping Through Object Properties
+// Object properties can be looped through using a for...in loop.
+
+let obj = {
+    key1: "value1",
+    key2: 2,
+    key3: true
+};
+
+for (let key in obj) {
+    console.log(key + ": " + obj[key]);    // code to execute on each iteration
+}
+
