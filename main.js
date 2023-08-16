@@ -155,6 +155,29 @@ Promise.all(alldone).then(()=>{
     console.log("Hello")
 })
 
+//With on load after
+import imagesLoaded from 'imagesloaded';
+import FontFaceObserver from 'fontfaceobserver';
+
+const fontPlayfair = new Promise(resolve => {
+    new FontFaceObserver("Playfair Display").load().then(() => {
+        resolve();
+    });
+});
+
+// Preload images
+const preloadImages = new Promise((resolve, reject) => {
+    imagesLoaded(document.querySelectorAll("img"), { background: true }, resolve);
+});
+
+let allDone = [fontPlayfair,preloadImages]
+
+window.addEventListener("load", (event) => {
+    Promise.all(allDone).then(()=>{
+        console.log("All items loaded")
+    })
+})
+
 
 //Smooth Scroll 
 body,
