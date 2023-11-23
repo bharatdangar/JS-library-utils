@@ -1,3 +1,6 @@
+//Custom Ease // opacity 600ms cubic-bezier(0.15, 0.3, 0.2, 0.9), transform 600ms cubic-bezier(0.15, 0.3, 0.2, 0.9), top 600ms cubic-bezier(0.15, 0.3, 0.2, 0.9)
+
+
 //💡 Variables
 //=============================================
 var x = 5;
