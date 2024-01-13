@@ -28,7 +28,26 @@ const getMousePos = e => {
     };
 };
 
+// Preload URL with promises 
+function preloadFiles(urls) {
+  const promises = urls.map(url => preloadFile(url));
+  
+  Promise.all(promises)
+    .then(() => {
+      console.log('All files preloaded');
+      // Hide loading screen and show the UI
+      document.querySelector('.loading-screen').classList.add('hide-loader')
+      //document.querySelector('.loading-screen').style.display = 'block'
 
+      //document.getElementById('mainUI').style.display = 'block';
+    })
+    .catch(error => console.error('Error preloading files:', error));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Preloader
+    preloadFiles(['ring.glb','images/rings.jpg','images/slide1.jpg','images/slide2.jpg','images/slide3.jpg','hands.mp4']);
+})
 
 // Preload images using Imagesloaded plugin
 //const imagesLoaded = require('imagesloaded');
