@@ -28,6 +28,27 @@ const getMousePos = e => {
     };
 };
 
+
+// Random Range
+const randomRange = (min, max) => min + Math.random() * (max - min)
+
+// Random index
+const randomIndex = (array) => randomRange(0, array.length) | 0
+
+// Remove from array
+const removeFromArray = (array, i) => array.splice(i, 1)[0]
+
+// Remove item from array
+const removeItemFromArray = (array, item) => removeFromArray(array, array.indexOf(item))
+
+// Remove random from array
+const removeRandomFromArray = (array) => removeFromArray(array, randomIndex(array))
+
+// Get random from array
+const getRandomFromArray = (array) => (
+  array[randomIndex(array) | 0]
+)
+
 // Preload URL with promises 
 function preloadFiles(urls) {
   const promises = urls.map(url => preloadFile(url));
