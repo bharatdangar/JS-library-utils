@@ -27,6 +27,11 @@
   --ls-heading: -0.085em;
   --transition-curve: cubic-bezier(0.005, 0.985, 0.22, 1);
   --transition-curve-inout: cubic-bezier(1, 0, 0, 1);
+
+	  --animation-primary: all .5s cubic-bezier(.7, 0, .3, 1);
+    --animation-fast: all .3s cubic-bezier(.7, 0, .3, 1);
+    --animation-smooth: all .7s cubic-bezier(.7, 0, .3, 1);
+    --animation-slow: all .9s cubic-bezier(.7, 0, .3, 1);
 }
 @media only screen and (max-width: 1920px) {
   :root {
