@@ -1,3 +1,5 @@
+/* Best Ease value => transition: height 1s cubic-bezier(.23,1,.32,1); */
+
 :root {
   --xl: 1920px;
   --lg: 1512px;
