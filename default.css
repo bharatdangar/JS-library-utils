@@ -36,6 +36,8 @@
     --animation-fast: all .3s cubic-bezier(.7, 0, .3, 1);
     --animation-smooth: all .7s cubic-bezier(.7, 0, .3, 1);
     --animation-slow: all .9s cubic-bezier(.7, 0, .3, 1);
+	   --ease-out-quint: cubic-bezier(.22,1,.36,1);
+    --ease-in-out-quint: cubic-bezier(.83,0,.17,1);
 }
 @media only screen and (max-width: 1920px) {
   :root {
@@ -140,3 +142,6 @@ main {
   display: block;
 }
 }
+
+
+ 
